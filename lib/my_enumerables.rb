@@ -47,6 +47,11 @@ module Enumerable
     count 
   end
 
+  def my_map
+    self.my_each_with_index {|element, index| self[index] = yield(element)}
+    self
+  end
+
 end
 
 # You will first have to define my_each
