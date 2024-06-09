@@ -19,7 +19,12 @@ module Enumerable
     res
   end
 
-  
+  def my_all?
+    self.my_each do |element|
+      return false unless yield(element)
+    end
+    return true
+  end
 
 end
 
