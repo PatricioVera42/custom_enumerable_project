@@ -23,7 +23,14 @@ module Enumerable
     self.my_each do |element|
       return false unless yield(element)
     end
-    return true
+    true
+  end
+
+  def my_any?
+    self.my_each do |element|
+      return true if yield(element)
+    end
+    false        
   end
 
 end
