@@ -8,6 +8,19 @@ module Enumerable
     self
   end
 
+  def my_select
+    res = []
+    self.my_each do |element|
+      if yield(element)
+        res.push(element)
+      end
+    end
+
+    res
+  end
+
+  
+
 end
 
 # You will first have to define my_each
