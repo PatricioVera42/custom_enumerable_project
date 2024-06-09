@@ -52,6 +52,12 @@ module Enumerable
     self
   end
 
+  def my_inject(value)
+    res = value
+    self.my_each { |element| res = yield(res, element) }
+    res
+  end
+
 end
 
 # You will first have to define my_each
